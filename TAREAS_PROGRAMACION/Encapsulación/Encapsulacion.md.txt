@@ -1,0 +1,22 @@
+# Encapsulación
+
+La encapsulación es una técnica de la programación orientada a objetos que permite proteger los datos dentro de una clase, evitando que otros objetos los modifiquen directamente.
+Esto ayuda a mantener la seguridad y el orden del programa.
+
+## Ejemplo en Python:
+
+class Persona:
+    def __init__(self, nombre, edad):
+        self.__nombre = nombre     # atributo privado
+        self.__edad = edad         # atributo privado
+
+    def get_nombre(self):
+        return self.__nombre
+
+    def set_nombre(self, nuevo_nombre):
+        self.__nombre = nuevo_nombre
+
+persona = Persona("Ana", 20)
+print(persona.get_nombre())
+persona.set_nombre("Beatriz")
+print(persona.get_nombre())
