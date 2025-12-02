@@ -1,0 +1,36 @@
+# Polimorfismo:
+# El polimorfismo es una propiedad de la programación orientada a objetos
+# que permite que diferentes clases respondan de manera distinta a un 
+# mismo mensaje o método. Es decir, se puede usar un mismo método en 
+# distintos objetos y cada uno ejecutará su propia versión, adaptada a 
+# su comportamiento específico.
+
+# Ejemplo de polimorfismo:
+
+# Clase padre
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def hablar(self):
+        print("Este animal hace un sonido.")
+
+# Clases hijas que heredan de Animal y sobreescriben hablar()
+class Perro(Animal):
+    def hablar(self):
+        print(f"{self.nombre} dice: ¡Guau!")
+
+class Gato(Animal):
+    def hablar(self):
+        print(f"{self.nombre} dice: ¡Miau!")
+
+# Lista de animales (polimorfismo en acción)
+animales = [Perro("Max"), Gato("Luna")]
+
+# Cada animal usa su propia versión del método hablar()
+for animal in animales:
+    animal.hablar()
+
+# Salida:
+# Max dice: ¡Guau!
+# Luna dice: ¡Miau!
