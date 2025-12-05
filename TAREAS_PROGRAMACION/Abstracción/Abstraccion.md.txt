@@ -1,20 +1,24 @@
-# Abstracción
-
-La abstracción es una propiedad de la programación orientada a objetos que permite identificar solo las características esenciales de un objeto, ignorando lo que no es necesario.
-Esto ayuda a simplificar el código y enfocarse en lo importante.
-
-## Ejemplo en Python:
+# Ejemplo de Abstracción en Programación Orientada a Objetos
+# La abstracción permite definir solo las características esenciales
+# y dejar los detalles a las clases derivadas.
 
 from abc import ABC, abstractmethod
 
+# Clase abstracta que representa un animal
 class Animal(ABC):
+
+    # Método abstracto que todas las clases hijas deben implementar
     @abstractmethod
     def hacer_sonido(self):
         pass
 
+# Clase concreta que hereda de Animal y define el método abstracto
 class Perro(Animal):
+
+    # Implementación específica del sonido del perro
     def hacer_sonido(self):
         return "Guau"
 
+# Crear un objeto de tipo Perro y mostrar su sonido
 mi_perro = Perro()
-print(mi_perro.hacer_sonido())
+print(mi_perro.hacer_sonido())  # Salida: Guau
